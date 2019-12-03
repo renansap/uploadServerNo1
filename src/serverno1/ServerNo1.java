@@ -25,29 +25,13 @@ public class ServerNo1 {
      */
     public static void main(String[] args) throws IOException {
 
-//        ServerSocket servidor = new ServerSocket(4001);
-//        System.out.println("Porta 4001 aberta!");
-//
-//        Socket cliente = servidor.accept();
-//        System.out.println("Nova conexão com o cliente " +     
-//            cliente.getInetAddress().getHostAddress()
-//        );
-//
-//        Scanner s = new Scanner(cliente.getInputStream());
-//        while (s.hasNextLine()) {
-//            System.out.println(s.nextLine());
-//        }
-//
-//        s.close();
-//        servidor.close();
-//        cliente.close();
         ServerSocket serverSocket = null;
 
         try {
             serverSocket = new ServerSocket(4001);
-            System.out.println("Subiu o servidor ");
+            System.out.println("Subiu o ServerNo1 ");
         } catch (IOException ex) {
-            System.out.println("Can't setup server on this port number. ");
+            System.out.println("Não é possível configurar o servidor neste número da porta. ");
         }
 
         Socket socket = null;
@@ -57,19 +41,19 @@ public class ServerNo1 {
         try {
             socket = serverSocket.accept();
         } catch (IOException ex) {
-            System.out.println("Can't accept client connection. ");
+            System.out.println("Não é possível aceitar a conexão do cliente. ");
         }
 
         try {
             in = socket.getInputStream();
         } catch (IOException ex) {
-            System.out.println("Can't get socket input stream. ");
+            System.out.println("Não é possível obter o fluxo de entrada do soquete. ");
         }
 
         try {
-            out = new FileOutputStream("C:\\Users\\igorv\\Documents\\NetBeansProjects\\uploadJava\\Upload\\build\\classes\\imagens\\novo.txt");
+            out = new FileOutputStream("C:\\Users\\Ksa\\Documents\\NetBeansProjects\\MortalKombat2\\uploadServerNo1\\src\\arquivos\\novo.txt");
         } catch (FileNotFoundException ex) {
-            System.out.println("File not found. ");
+            System.out.println("Arquivo não encontrado. ");
         }
 
         byte[] bytes = new byte[16 * 1024];
