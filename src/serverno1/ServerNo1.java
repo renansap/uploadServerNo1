@@ -51,7 +51,8 @@ public class ServerNo1 {
         }
 
         try {
-            out = new FileOutputStream("C:\\Users\\Ksa\\Documents\\NetBeansProjects\\MortalKombat2\\uploadServerNo1\\src\\arquivos\\novo.txt");
+            out = new FileOutputStream("C:\\Users\\Ksa\\Documents\\NetBeansProjects\\uploadServerNo1\\src\\arquivos\\novo.txt");
+            System.out.println("Arquivo Copiando SeverNo1");
         } catch (FileNotFoundException ex) {
             System.out.println("Arquivo não encontrado. ");
         }
