@@ -51,13 +51,11 @@ public class ServerNo1 {
         }
 
         try {
-            out = new FileOutputStream("C:\\Users\\Ksa\\Documents\\NetBeansProjects\\uploadServerNo1\\src\\arquivos\\novo.txt");
+            out = new FileOutputStream("C:\\Users\\Ksa\\Documents\\NetBeansProjects\\uploadServerNo1\\src\\arquivos\\novo1.txt");
             System.out.println("Arquivo Copiando SeverNo1");
-        } catch (FileNotFoundException ex) {
-            System.out.println("Arquivo não encontrado. ");
-        }
+        
 
-        byte[] bytes = new byte[16 * 1024];
+        byte[] bytes = new byte[16*1024];
 
         int count;
         while ((count = in.read(bytes)) > 0) {
@@ -68,6 +66,9 @@ public class ServerNo1 {
         in.close();
         socket.close();
         serverSocket.close();
+        } catch (FileNotFoundException ex) {
+            System.out.println("Arquivo não encontrado. ");
+        }
     }
 }
 
