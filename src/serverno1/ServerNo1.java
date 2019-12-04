@@ -5,6 +5,7 @@
  */
 package serverno1;
 
+import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.IOException;
@@ -26,6 +27,8 @@ public class ServerNo1 {
     public static void main(String[] args) throws IOException {
 
         ServerSocket serverSocket = null;
+        
+        String caminho = "C:\\Users\\Ksa\\Documents\\NetBeansProjects\\uploadServerNo1\\src\\arquivos\\";
 
         try {
             serverSocket = new ServerSocket(4001);
@@ -46,13 +49,21 @@ public class ServerNo1 {
 
         try {
             in = socket.getInputStream();
+            
+           // System.out.println("teste "+in.toString().getClass().getName().);
+            
+           
         } catch (IOException ex) {
             System.out.println("Não é possível obter o fluxo de entrada do soquete. ");
         }
 
         try {
-            out = new FileOutputStream("C:\\Users\\Ksa\\Documents\\NetBeansProjects\\uploadServerNo1\\src\\arquivos\\novo1.txt");
-            System.out.println("Arquivo Copiando SeverNo1");
+            //System.out.println("Gettt "+in.());
+            out = new FileOutputStream(caminho + "novo1.txt");
+            //System.out.println("out "+ out.getClass().getName());
+            
+            
+           //System.out.println("Arquivo Copiando SeverNo1");
         
 
         byte[] bytes = new byte[16*1024];
